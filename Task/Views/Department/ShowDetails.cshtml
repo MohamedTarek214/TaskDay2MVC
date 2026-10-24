@@ -1,0 +1,21 @@
+﻿@model Department
+@{
+    ViewData["Title"] = "ShowDetails";
+}
+
+<h1>Department Details</h1>
+<table class="table table-hover table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Manger Name</th>
+    </tr>
+    <tr>
+        <td>@Model.Id</td>
+        <td>@Model.Name</td>
+        <td>@Model.MangerName</td>
+        
+    </tr>
+
+</table>
+
