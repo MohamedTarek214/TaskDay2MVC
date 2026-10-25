@@ -1,8 +1,30 @@
-﻿
+﻿@using Task.View_Model
+@model ShowStudentDepartmentViewModel
+
 @{
-    ViewData["Title"] = "ShowDepartmentInfo";
+    ViewData["Title"] = "Department Info";
 }
 
-<h1>ShowDepartmentInfo</h1>
+<h2>Department Information</h2>
 
+<div class="mb-3">
+    <label>Department Name:</label>
+    <p>@Model.DepartmentName</p>
+</div>
 
+<div class="mb-3">
+    <label>Students older than 25:</label>
+
+    <select class="form-control" asp-items="Model.Students">
+        <option value="">Select Student</option>
+    </select>
+</div>
+
+<div class="mb-3">
+    <label>Department State:</label>
+    <p>@Model.DepartmentState</p>
+</div>
+
+<a asp-action="ShowAll" class="btn btn-secondary">
+    Back To Departments
+</a>
