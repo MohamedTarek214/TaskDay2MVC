@@ -16,6 +16,19 @@
         <td>@Model.Name</td>
         <td>@Model.Age</td>
         <td>@Model.Department.Name</td>
+        <td>
+            <div class="d-flex gap-2">
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-outline-primary">
+                    <i class="bi bi-pencil-square"></i> Edit
+                </a>
+                <form asp-action="Delete" asp-route-id="@Model.Id" method="post"
+                      onsubmit="return confirm('Are you sure?');">
+                    <button type="submit" class="btn btn-sm btn-outline-danger">
+                        <i class="bi bi-trash"></i> Delete
+                    </button>
+                </form>
+            </div>
+        </td>
         
 
     </tr>

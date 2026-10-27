@@ -1,0 +1,41 @@
+﻿@using Task.ViewModel
+@model StudentVM
+
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h1>Add Student</h1>
+
+<form method="post" action="/Student/Save">
+
+    <div>
+        <label>Add Name</label>
+        <input type="text" name="Name" value="@Model?.Name"
+               class="form-control" />
+    </div>
+
+    <div>
+        <label>Add Age</label>
+        <input type="number" name="Age" value="@Model?.Age"
+               class="form-control" />
+    </div>
+
+    <div>
+        <label>Department</label>
+
+        <select name="DepartmentId" class="form-control">
+            <option value="">Select Department</option>
+
+            @foreach (var item in Model.DeptList)
+            {
+                <option value="@item.Id">@item.Name</option>
+            }
+        </select>
+    </div>
+
+    <input type="submit" value="Save" class="btn btn-primary" />
+
+</form>
+
+<a href="/Student/ShowAll">Back To List</a>
